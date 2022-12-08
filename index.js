@@ -10,7 +10,7 @@ const productRouter = require("./routes/product.js");
 const userRouter = require("./routes/user");
 
 //INIT
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 //middleware
@@ -25,7 +25,7 @@ mongoose.connect(db).then(() => {
     console.log("Connection successful");
 }).catch((e) => { console.log(e); });
 
-app.listen(PORT, "0.0.0.0", function () {
+app.listen(PORT, function () {
     console.log(`Connect at port ${PORT}`);
 });
 
